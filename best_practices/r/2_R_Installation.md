@@ -9,6 +9,7 @@ Then R gets installed in `C:/Program Files/Alteryx/R-x.y.z` (depends on R versio
 
 > How does it interact with an existing version?   
 > What are things to watch out for
+
 Simply, it doesn't. But that is the underlying problem; users have an install that they use in RStudio. 
 Then they install packages in one installation that may be a different version than the ones in another installation.
 The issues come from a few different sources:
@@ -22,13 +23,16 @@ The issues come from a few different sources:
     1. This is more rare and usually only with Microsoft R Client/Server. Different BLAS can result in varying results / possibilities in the library
 
 > How does the Alteryx installation interact with an R installation
+
 The file `<path_to_alteryx_install>/Settings/RPluginSettings.ini` specifies the path that Alteryx should launch an `R.exe` instance from. We recommend not changing it, but in theory, it can be changed to point to another installation.
 
 > How do I make RStudio work with my Alteryx R install?
+
 1. From RStudio, `Tools > Global Options > R version > Change`. Point to `<alteryx_install_path>/R-x.y.z`.
 2. Set your library trees to match the ones that Alteryx gives.
 
 > How do I check/set my library trees?
+
 Check your library trees by running the function `.libPaths()`. You can do this in RStudio or you can do this in Alteryx via an R tool.
 
 Change your library tree with the function`.libPaths`. 
@@ -61,6 +65,7 @@ If you don't want to run this each time you start RStudio, you can add it to the
 
 
 > What are best practices for managing multiple R installations and development in RStudio and Alteryx?
+
 1. Don't 
 2. Don't
 3. If you have to have 2 but only want to use one regularly, follow above instructions to set your RStudio R.exe and library trees to be the same as in Alteryx
